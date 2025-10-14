@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=3"/>
+<title>Mi Portal de Enlaces</title>
+<base target='_blank'/>
+
+<style type="text/css">
+
+* {
+    box-sizing: border-box;
+}
+body{
+	font-family:  "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	width:100vw;
+	height:100%;
+	background-color:#EBEBEB;
+	background-image:url("images/Ruisenor_enjaulado.jpg");
+    background-attachment: fixed;
+	padding: 0px;
+	margin:0;
+	}
+
+.busqueda{
+	background-color:#FFF;
+	position:absolute;
+    top: 12.5vw;
+	float: left;
+/*margin-left:3vw;*/
+    /*left: 2px;*/ 
+    width: 18%;
+    height: 6%;
+	text-align:center;
+	vertical-align:middle;
+    border: 2px solid black;
+	border-style: double;
+	border-color: #030303;	
+	z-index:1;
+	font-size: 1.5vw;
+	}	
+		
+	.busqueda1{
+	background-color:#FFF;
+	position:absolute;
+    top: 12.5vw;
+	float: right;
+/*margin-left:3vw;*/
+    /*left: 2px;*/ 
+    width: 18%;
+    height: 6%;
+	text-align:center;
+	vertical-align:middle;
+    border: 2px solid black;
+	border-style: double;
+	border-color: #030303;	
+	z-index:1;
+	font-size: 1.5vw;
+	}	
+	
+.contenedor {
+	min-width:50%;
+	background-color: #EBEBEB;
+	width: 95%;
+	margin: auto;
+	height:100%;
+	border-top-width: thick;
+	border-right-width: thick;
+	border-bottom-width: thick;
+	border-left-width: thin;
+	border-top-style: dotted;
+	border-right-style: dotted;
+	border-bottom-style: dotted;
+	border-left-style: dotted;
+	border-color: red;
+}
+	.encabezado {
+	float:left;	
+	font-family: "Times New Roman", Times, serif;
+	/*font-size: 1.2em;*/
+	font-size: 3.5vw;
+/*	line-height:2.5vw;
+*/	font-style: italic;
+	font-weight: bold;
+    color: #FF8000;
+	background-color: #0080C0;
+ 	height: 12vw;
+	width: 100%;
+	border-style: solid;
+	text-align:center;
+	margin-bottom:50px;
+	padding: 0.8vw 0;
+}
+	.barralateral {
+	font-size: 1.3vw;
+	font-style: normal;
+	font-weight:bold; 
+	background-color:#EBEBEB;
+	float: left;
+	width: 22%;
+	border-style: double;
+	border-color: #030303;
+	/*margin-top: 100px;*/
+	margin-bottom:20px;
+	margin-right: 4%;  
+	opacity: 0.9;  
+		}
+
+	.barralateral2 {
+	font-size: 1.3vw;
+	font-weight:bold; 
+	background-color:  #EBEBEB;
+	float: right;
+	height: 100%;
+	width: 22%;
+	border-style: double;
+	border-color: #030303;
+	margin-bottom:20px;
+	margin-right: 0;
+	opacity: 0.9;  
+	}
+	
+	ul {
+    list-style-type: none;
+	display:block;
+    margin: 0;
+    padding: 0;
+/*	vertical-align: text- middle;*/
+    width: 100%;
+	background-color:  #CDCDCD;
+    border: 1px solid #555;
+	overflow:hidden;
+}
+
+.piedepagina {
+    clear: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight:bold;
+	background-color:#408080;
+	height: 60px;
+	width: 80%;
+	margin:auto;
+	margin-top: 10px;
+	padding-top: 20px;
+	border-style: double;
+	margin-top: 20px;
+	text-align:center;
+}
+
+.p1{
+	border: 1px solid; 
+	text-align:center; 
+	background-color: #80FFFF; 
+	font-size:100%;
+	line-height:3em;
+	height: 3.5em; 
+/*	padding-top: 10px;
+*/	font-weight: bold;
+	margin-top: 0px;	
+	vertical-align:middle;	
+	}
+.p2{
+	border: 2px solid; 
+	text-align:center; 
+	background-color: #FFFFA4; 
+	font-size:80%;	
+	height: 4.5em; 
+	line-height: 3.5em; 
+/*	padding-top: 15px;  */ 
+	font-weight: bold; 
+	margin-top: 0px;
+	}
+
+li a, a {
+	display: block;
+    color: #000;
+    text-decoration: none;
+/*	vertical-align:middle;*/
+	    text-align: left;
+		height:3.5em;
+		padding-left: 1vw;
+}
+
+li {
+	border-bottom: 1px solid #555;
+	height: 3.5em;   
+	padding-top: 20px px;
+
+	line-height: 3.5em; /*(hace que se superponga el texto al achicar ventana */	
+/*display:block;
+*/}
+
+
+li:last-child {
+    border-bottom: none;
+}
+
+li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+li a:hover:not(.active) {
+    background-color: #099;
+    color: white;
+}
+
+.logoizquierda{
+	position:absolute;
+    top: 3px;
+    left: 2px; 
+    width: 13%;
+    height: 11vw;
+    border: 2px solid black;	
+	z-index:1;
+	}	
+
+.logoderecha{
+	position:absolute;
+    top: 3px;
+    right: 2px; 
+     width: 13%;
+    height: 11vw;
+    border: 2px solid black;	
+	z-index:1;
+	}
+
+
+/*.divlinea{
+	display: inline-block;
+	width: 50px;
+	height: 80px;
+	border: 2px solid blue;
+	}
+.penlinea{
+	display: inline-block;
+	width: 35%;
+	height: 180px;
+	border: 2px solid blue;
+	}*/
+	
+/*PARA MENÚS TIPO DROPDOWN	
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+	width: 30%;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+	margin-right: 180px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgreen;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+HASTA ACÑA DROPDOWN*/
+/*PARA PRUEBA*/
+/*TERMINA PRUEBA*/
+</style>
+</head>
+
+<body>
+
+<img class="logoizquierda"src="images/logoobservatorio.png"/> 
+
+<img class="logoderecha" src="images/logoobservatorio.png"/> 
+
+
+<div class="encabezado">
+  <p>MI PORTAL DE ENLACES DE INTERÉS</p>
+</div>
+
+
+<div class="contenedor">
+
+	<div class="busqueda"
+   
+<a style="color:blue; position: absolute;bottom: 0;
+  left: 0;
+  width:30%;
+  border: 3px solid #73AD21; href="https://www.google.com.pe"> </a>
+  <a href="https://www.google.com/">Búsqueda en Google</a>  
+	</div>
+	
+<div class="busqueda1"
+	
+   
+<a style="color:blue; position: absolute;bottom: 0; 
+  right: 0;
+  width:30%;
+  border: 3px solid #73AD21; href="https://es.wikipedia.org"> </a>
+<a href="https://es.wikipedia.org/">Búsqueda en Wikipedia</a>  
+	
+   </div>
+
+</div>
+   
+
+     <div class="barralateral">
+  
+  <ul>
+  <li><p class="p1"> DIARIOS</p>  </li>
+  <li><p class="p2"> PERÚ </p> </li>
+  <li> <a href="http://elcomercio.pe/"> El Comercio</a> </li>
+  <li> <a href="http://peru21.pe/"> Perú 21 </a></li>
+  <li> <a href="http://diariocorreo.pe/"> Correo </a></li> 
+  <li> <a href="http://gestion.pe/">Gestión </a> </li>
+  <li> <a href="http://www.expreso.com.pe/"> Expreso</a> </li>
+  <li> <a href="http://exitosanoticias.pe/"> Exitosa</a> </li>
+  <li> <a href="http://larazon.pe/"> La Razón</a> </li>
+  <li> <a href="http://larepublica.pe/"> La República</a> </li>
+  <li> <a href="http://diariouno.pe/"> Diario Uno</a> </li>
+  <li> <a href="http://www.hildebrandtensustrece.com/"> Hildebrant en sus Trece</a> </li>
+  <li> <a href="http://www.desdeperu.com/portada-de-diarios-peruanos-lima"> Primeras planas</a> </li>
+  <li><p class=p2> ARGENTINA</b> </p></li>
+  <li> <a href="http://www.lanacion.com.ar"> La Nación</a> </li>	
+  <li> <a href="http://www.perfil.com.ar"> Perfil</a> </li>	   
+   <li> <a href="http://www.clarin.com/"> Clarín</a ></li>
+   <li> <a href="http://www.pagina12.com.ar"> Página 12</a> </li>
+  </ul>
+  
+</div>
+
+<div class="barralateral">
+
+<ul>
+	<li><p class=p1> +DIARIOS</p> </li> 
+<li><p class="p2"> OTROS PAÍSES</p> </li>
+  <li> <a href="http://www.prensaescrita.com/"> Prensa Escrita </a></li>
+  <li> <a href="http://www.foxnews.com/"> Fox News (EU) </a></li>
+	<li> <a href="https://www.libertaddigital.com/"> Libertad Digital (España) </a></li>
+  <li> <a href="http://oglobo.globo.com/"> O Globo (Br)</a></li>
+  <li> <a href="http://veja.abril.com.br/"> Revista Veja (Br)</a> </li>
+  
+  <li><a href="http://emol.com/">El Mercurio (Ch) </a> </li>
+  <li> <a href="http://www.latercera.com/"> La Tercera (Ch)</a> </li>
+  <li> <a href="http://www.abc.com.py/"> ABC (Py)</a> </li>
+   <li> <a href="http://eluniversal.com.mx/"> El Universal (Mx)</a></li>	
+   <li> <a href="http://www.semana.com/"> Semana (Col)</a></li>	   
+
+	<li> <a href="http://www.eltiempo.com/"> El Tiempo (Col)</a></li>	   
+   <li> <a href="http://www.elespectador.com/">El Espectador(Col)</a></li>	   
+   <li> <a href="http://www.talcualdigital.com/"> Tal Cual (Ven))</a></li>
+   <li> <a href="http://www.el-nacional.com/"> El Nacional(Ven)</a></li>	   
+  </ul>
+  
+</div>
+
+<div class="barralateral">
+
+<ul>
+<li><p class=p1> MULTIMEDIA</p> </li>  
+<li><p class=p2> TELEVISIÓN</p></li>
+  <li> <a href="http://panamericana.pe/panorama"> Panorama</a></li>
+  <li> <a href="http://panamericana.pe/buenosdiasperu"> Buenos Días Perú </a></li>
+  <li><a href="http://www.americatv.com.pe/cuarto-poder/"> Cuarto Poder</a> </li>
+  <li> <a href="https://www.latina.pe/noticias"> Latina: Noticias</a></li>
+    <li> <a href="http://www.atv.pe/envivo?ref=menu-sup"> ATV Noticias</a></li>
+  <li> <a href="http://www.latina.pe/noticias/programa/sin-medias-tintas/"> Sin Medias Tintas</a></li>
+
+  <li> <a href="https://www.youtube.com/watch?v=2AzoTJQ4Sa0&list=PLyz-UXBdXZFS0pS2WD0tytN5MlUBLzCss"> Mira Quién Habla</a></li>
+  <li> <a href="https://www.youtube.com/watch?v=rohUtMue-gs&list=PLyz-UXBdXZFQs60qquqJyBoHlAPydZcnw">Rey con Barba</a></li>
+  <li> <a href="https://www.youtube.com/watch?v=os1Vy3s53II&list=PLyz-UXBdXZFQr6maGYcJd3DrpPExYVoVT">Primer Plano</a></li>
+  <li> <a href="http://www.eltrecetv.com.ar/periodismo-para-todos"> Periodismo para Todos</a></li>
+  <li> <a href="http://www.ntn24.com/">NTN24</a></li>
+	<p class=p2> RADIO</p> </li>
+   <li> <a href="http://rpp.pe"> Radio Programas</a></li>	
+   <li> <a href="http://www.capital.com.pe/"> Radio Capital</a></li>	   
+   <li><a href="http://exitosanoticias.pe/"> Radio Exitosa</a></li>	   
+   <li><a href="http://radiomitre.cienradios.com/"> Radio Mitre</a></li>	   
+   <li> <a href="http://tunein.com"> Tune In</a></li>
+   <li> <a href="http://www.ivoox.com/podcast-cada-manana_sq_f1129671_1.html?utm_expid=113438436-29.eCvEPSK_RumfPBvR4kTjaw.0&utm_referrer=http%3A%2F%2Fwww.ivoox.com%2Fescuchar-archivo-radio-mitre_nq_47580_1.html"> Ivoox- Cada Mañana</a></li>
+   <li> <a href="http://www.ivoox.com/podcast-lanata-sin-filtro_sq_f178197_1.html?utm_expid=113438436-29.eCvEPSK_RumfPBvR4kTjaw.0"> Ivoox - Lanata sin Filtro</a></li>	   
+    
+   </ul>
+  
+  </div>
+
+
+<div class="barralateral2">
+
+<ul>
+   <li><p class="p1"> OTROS</p></li>  
+   <li><p class="p2"> TUTORIALES</p></li>
+  <li> <a href="http://www.w3schools.com/html/default.asp"> HTML</a></li>
+  <li> <a href="http://www.w3schools.com/css/default.asp"> CSS</a></li>
+  <li><a href="http://www.w3schools.com/js/default.asp"> JAVA SCRIPT</a></li>
+  <li><a href="http://www.w3schools.com/php/default.asp"> PHP</a></li>
+  <li><p class="p2"> STREAMING</p></li>
+   <li> <a href="http://www.radiotunes.com/"> Radio Tunes</a></li>
+   <li> <a href="http://radio.garden/live/"> Radio Garden</a></li>
+   
+   <li> <a href="http://thenostalgiamachine.com/"> Nostalgia Machine</a></li>
+   
+   <li><a href="http://heduardo-rockperuano.blogspot.com/"> Rock Peruano</a></li>
+	<li><p class="p2"> VARIOS</p></li>
+  <li> <a href="https://www.lapelotona.com/pe/partidos-hoy//">La Pelotona - Partidos de hoy</a></li>
+   <li> <a href="https://www.yanuq.com/index.htm"> Yanuq - Recetas peruanas</a></li>
+   
+</ul>
+  </div>
+
+</div>
+	<div class="piedepagina">
+Esta página fue elaborada por la Asociación Internacional de Hacedores de Páginas Web
+
+</div> 
+
+</body>
+</html>

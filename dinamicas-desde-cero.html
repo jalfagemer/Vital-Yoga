@@ -1,0 +1,479 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dinámicas de Restauración Interior</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<style>
+*{box-sizing: border-box;}
+body{
+	font-size:100%;
+	margin:0;
+	padding:0;
+	background-image: url(images/fondo.jpg)
+	}
+
+h1{ font-size: 1.5em; 
+	font-weight:bold;
+	color: #e76012;	
+	text-align:center;
+	}
+
+h2{ font-size: 1.2em; 
+	/*font-weight:bold; */
+	color: #e76012;		
+	}
+
+h3{	font-size: 0.9em; 
+	color: #03C;
+	padding-left: 1%;		
+	padding-right: 1%;
+	}	
+
+#ancla{}
+
+.contenedor{
+	width: 80%;
+	height: 100%;
+	margin: 4% auto;
+	border-radius:10px;
+	background-color:rgb(238,238,238);	
+	color: black; 
+	}
+	
+#navegador{
+	width: 20%;
+	min-width: 300px:
+	height: 900px;	
+	position:fixed;
+	left: 15%;
+	top:0;
+	background-color:rgb(251,251,251);
+	border: 5px solid rgb(200,200,200);
+/*	box-shadow: 2px 10px grey;*/
+	color: black;
+	z-index:9;
+	}
+/*#cajaprueba{
+	width: 150px; height: 60px; background-color:red;
+	border: 3px solid red;
+	display:none;
+	position:relative;
+	left: 100px;	
+	}	*/
+.logo{
+	margin-top: 45px;	
+	}	
+#face{
+	margin-left: 75%;
+	/*margin-top: 50px;*/
+	color: #e76012;	
+	}	
+.menu-principal{
+	width:100%;
+	margin: 50px 0 ;
+	margin-left: 0;
+	border-top: 2px solid rgb(231,231,231);
+	list-style-type: none;	
+	list-style-position: outside;
+	padding: 0;	
+	}
+	
+.menu-item{
+	width: 100%;
+	padding-left: 10%;
+	line-height: 200%;
+	border-bottom: 2px solid rgb(231,231,231);
+	text-decoration:none;
+	font-size: 80%;
+	}
+a{	
+	text-decoration:none;
+	color:black;
+			}
+a:hover, a:active{
+	color:#e76012;
+
+	
+	}
+
+.menu-item:hover, .menu-item:active{
+	font-weight:bolder;
+	background-color:rgb(197,218,235);
+	font-size:110%;
+	}
+
+.contenido{
+	width: 60%;
+	margin-left: 35%;
+	margin-top: 0px;
+	text-align:justify;
+	/*border: 5px solid rgb(20,20,20);*/
+	}	
+/*copia de detallles... anterior*/	
+
+.textoprincipal{
+	font-size:0.9em; 
+	width: 100%;
+	margin:auto;
+	
+	}
+
+.ampliar, .menu{
+	background-color:#C7DBEC;
+	color: #e76012;
+	width:5em;
+	font-weight:bold;
+	cursor:pointer; 
+	}
+#footer{
+	font-size:0.6em;
+	text-align:center;	
+	}
+.listacuadrado{
+	list-style: square outside;
+	padding-left: 1.2em;
+	}	
+.listaalfa{
+	list-style: lower-alpha outside;
+	padding-left: 1.2em;
+	}
+
+.listanum{
+	list-style: decimal outside ;
+	padding-left: 15px;
+	}
+	
+#ampliar1, #ampliar2, #ampliar3 {
+	width: 90%;
+	margin:auto;
+	padding: 0 5px;
+	display:none;
+	font-size:0.8em; 
+	font-style:italic;
+	font-weight:bold;	
+	background-color:white;
+	border: 2px solid black;
+	border-radius: 5px;
+	margin-bottom:10px;
+}
+.cinta-superior{
+	display:none;
+	width: 100%;
+	background-color: #C7DBEC;
+	margin-top: 0;
+	height: 10%;
+	min-height: 60px;
+	/*line-height:40px;*/
+	margin-bottom: 15px;
+	}
+
+.cinta-menu{
+	float:left;	
+	width: 10%;
+	margin-left: 1.5%;
+	margin-top: 8%;
+	}
+.cinta-logo{
+	position:relative;
+	left:30%;
+	min-width: 80px;	
+	}
+.cinta-compartir{
+	float:right;
+
+	margin-top: 1.5%;
+	margin-right: 1.5%;
+	min-height: 80%;
+
+	}	
+
+#cierra_menu{
+	display:none;
+	float:right;
+	cursor:pointer;	
+	}			
+	
+	
+@media screen and (max-width:900px){
+
+
+h1{	
+color:#03C;
+}
+
+h3{	
+color:#e76012;
+}
+#navegador{ 
+	display:none;
+	
+	width: 60%;
+	max-width: 250px;
+	height: auto;	
+	
+	left: 0px;
+	top:0;
+   animation: caer .5s;
+  /* animation: regresar .5s;*/
+	/*transition: left 1s;*/
+}
+
+@keyframes caer {
+    from {top: -1000px;}
+    to {top: 0px;}
+}
+
+@keyframes regresar {
+    from {top: 0px;}
+    to {top: 1000px;}
+}
+/*#navegador:hover{left:1000px;}*/
+
+
+/*#cajaprueba{display: block;}
+*/
+.logo{
+	margin-top: 5px;
+}
+
+.menu-principal{
+	margin-top: 5px;
+}
+.menu-item {
+	line-height: 140%;
+}
+.contenedor{
+	width: 100%;
+	height:100%;
+	margin-top: 0px;
+}
+.contenido{
+	width: 100%;
+	margin-left: 0;
+	line-height: 120%
+	}
+.textoprincipal{
+	padding: 0 10px;
+}
+.cinta-superior{
+	display:block;
+	padding:0px;
+}
+
+#cierra_menu{
+	display:block;
+	position:absolute;
+	top: 10px;
+	right: 0px;
+	}		
+#face{
+	display:none;	
+	}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<div class="contenedor">
+	
+    <div id="face">Síguenos en : <a href="http://www.facebook.com/vitalyoga" target="_blank"><img src="images/facebook.JPG" width="32" height="31" style="margin-left:5px; margin-top:15px;" border="0"/></a></div>
+
+<div class="contenido">
+
+<div class="cinta-superior">
+<div class="cinta-menu"><span class="menu" onclick="abre_menu()">Menú</span></div> 
+<a href="index.html"> <img class="cinta-logo" src="images/logo.png" style="width:15%"></a>
+<a href="http://www.facebook.com/vitalyoga" target="_blank"> <img class="cinta-compartir" src="images/facebook.JPG" style="width: 32px; height:61px;  border="0"" <img/></a>
+</div>
+
+   		
+         
+<h1>Dinámicas de Restauración Interior</h1>
+<h3><em>La felicidad es un estado natural que todos experimentamos cuando éramos pequeños. Muchos solemos perderla en alguna parte de nuestro mundo interior. No se fue, no se acabó; sólo hay que saber encontrarla otra vez. <b>En eso, ¡podemos ayudarte!</b></em></h3>
+<div class="textoprincipal">
+<p> <img style="float:right; padding:2px 15px;" src="images/nino_llorando.jpg" width="220" height="129" />Mucha gente pasa por estados de malestar interior como la depresión, la ansiedad, la ira y el resentimiento. Son inevitables y normales cuando son temporales (como por algún conflicto, amenaza o pérdida), pero muy peligrosos cuando se mantienen de forma prolongada pues, además de hacernos sentir afligidos, nos causan daños físicos y emocionales importantes.  <!--<span class="ampliar" onclick="ampliar1()">Ampliar</span>--></p>
+
+<img style="float:left; padding:2px 15px;" src="images/mujer_atrapada.jpg" width="220" height="129" /><div id="ancla"></div>  
+<p>Cuando estamos así, la autoestima se deteriora y la energía disminuye. Gradualmente, se genera un verdadero círculo vicioso que puede llegar a hacerse inmanejable: el individuo no tiene la fuerza o la claridad para salir y enfrentar sus problemas, mientras que se hace adicto de su propia infelicidad. Además, todo se tiñe de negatividad, lo que agravará la situación aún más.<span class="ampliar" onclick="ampliar2()"> Ampliar</span></p> 
+</div>
+
+<div id="ampliar2">
+<p>Algo que la ciencia ha descubierto es que hay una tendencia a mantener y hasta aumentar los estados que nos causan sufrimiento. Esta adicción ocurre porque:</p>
+<ol class="listaalfa"> <li>Los núcleos cerebrales relacionados con estos son alimentados y crecen, lo cual refuerza su poder;</li>
+<li> Se crea una necesidad orgánica por las sustancias producidas en el cerebro cuando estamos así (neurotransmisores);</li>
+<li>Desarrollamos estilos de comportamiento que buscan obtener afecto y atención, a partir de nuestras desgracias. </li></ol>
+
+<p>Mantener por mucho tiempo estos estados negativos, nos generan una serie de problemas físicos y psicológicos, además de afectar a los que nos rodean. Estos  surgen por acción de las hormonas que el estrés produce y, también, por el quiebre en el equilibrio emocional interno. </p>
+<p>Algunos de estos efectos negativos son: </p>
+<ul class="listacuadrado">
+<li>Debilitamiento del sistema inmune, que es el que enfrenta infecciones y  cáncer;</li>
+<li>Mayor riesgo de infartos y derrames en corazón y cerebro;</li>
+<li>Problemas digestivos, osteo-articulares e hipertensión;</li>
+<li>Disminución de la autoestima y la vitalidad interna;</li>
+<li>Problemas del sueño e irritabilidad;</li>
+<li>Dificultad para desarrollar una vida familiar, social y laboral armoniosas.</li>
+</ul>
+
+<button onclick="cerrar2()">Cerrar</button>
+</div>
+
+<div class="textoprincipal">
+<h2>¿Qué son las Dinámicas de Restauración Interior?</h2>
+<p>En estas condiciones, se hace necesario recibir un impulso que produzca un cambio en el "chip interno", que permita que la persona deje de sentirse agobiada, reconstruya su propia positividad y pueda hacer lo necesario para buscar soluciones. </p>
+<p><b>Las <span style="color:#e76012"> Dinámicas de Restauración Interior</span> pueden darnos ese "empujón" que necesitamos para restaurar esa alegría que solíamos tener cuando niños y nos haga ver todo de forma distinta.</b></p>
+
+<p>Comprenden un conjunto de actividades realizadas diariamente –dos horas cada vez– durante dos semanas (con pausas los fines de semana) que incluirán:</p>
+<ol class= "listanum">
+<li>Sesiones de yoga (de exigencia moderada), que estimularán la producción de endorfinas (las "hormonas de la felicidad") y el flujo interno de energía;</li>
+
+<li>Prácticas de meditación, para aprender a calmar la mente, la que gusta de "rumiar" los problemas;</li>
+
+<li>Ejercicios de respiración, que aumentarán la energía interior;</li>
+<li>Técnicas de auto-afirmación y de purga de sentimientos negativos.</li>
+</ol>
+<p></p><p>Todas ellas, al realizarse en forma conjunta y continuada, actuarán sinérgicamente y se convertirán en un "shock positivo" que los participantes irán percibiendo desde los primeros días. Las técnicas a utilizar tienen comprobación científica moderna. No se contraponen a los procesos terapéuticos convencionales e, incluso, pueden complementarlos y potenciarlos.</p>
+
+<b>¿Qué no son las Dinámicas de Restauración Interior?</b>
+<ul class="listacuadrado">
+<li>No se trata de consejería o de "recetas" de cómo sentirse bien.</li>
+<li>Ni de reuniones de análisis de los problemas por los que los participantes atraviesan.</li> 
+<li>Ni de utilización de dietas especiales, "píldoras mágicas" o "ceremonias sanadoras". </li>
+</ul>
+
+<h2>¿Cuándo y Dónde?</h2>
+<p>Las dinámicas se desarrollarán durante diez días, de lunes a viernes, por dos semanas, del 05 al 16 de diciembre. Los horarios disponibles son: de 8:00 a 10:00 a.m. y de 7:00 as 9.00 p.m. Se dictarán en Miraflores, a dos cuadras de las avenidas Larco, Paseo de la República y Benavides.</p>
+<p>El número de participantes es limitado, para hacer una experiencia personalizada.</p>
+<p>Los precios son sumamente reducidos y <b>tenemos para ti una propuesta que podría resultarte muy interesante:</b></p>
+<p>Sabemos que para algunos esto pueda resultar exagerado pero, como estamos tan convencidos del potencial de las técnicas que presentamos, <b>asumimos el siguiente compromiso:</b></p> 
+
+<div style="width:90%; margin:auto; padding: 2px;  border: 1.5px solid black;"><b>
+<p>Si el participante no terminara la experiencia sintiendo un cambio positivo significativo, claramente percibible, le devolveremos el importe pagado, sin necesidad de justificación. <u>Una única condición: Se deberá participar en todas las dinámicas, sin excepción</u>. </p> </b>
+</div>
+
+          
+<h2 align="center">Inscripciones e informes: <span><a href="contactenos.php" title="haga click aquí" style="color:#e76012"><b><u>Presione aquí</u></b></a></h2>
+<!--
+<center><iframe src="https://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fvital-yoga.org%2Fdinamicas-desde-cero.html&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></center>-->
+<a href=<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//vital-yoga.org/dinamicas-desde-cero.html">Compartir en Facebook</a>
+<a href="https://twitter.com/home?status=https%3A//vital-yoga.org/dinamicas-desde-cero.html">Compartir en Twitter</a>
+<a href="https://plus.google.com/share?url=%3Ca%20href=%22https%3A//www.facebook.com/sharer/sharer.php?u=https%253A//vital-yoga.org/dinamicas-desde-cero.html%22%3ECompartir%20en%20Facebook%3C/a%3E">Compartir en Google+</a>
+
+<hr>
+  <p style="font-size:80%; font-weight:bold;">VITAL YOGA ofrece, además de sus actividades públicas, programas especiales para grupos, empresas y otras organizaciones. Estos programas, serán diseñados en forma personalizada, de acuerdo a las necesidades  de los interesados.</p>
+		
+        <hr>
+  <div id="footer"><p>Vital Yoga al encuentro de la armonía interior - Todos los derechos reservados Copyright © 2011 </p></div>
+	</div>
+</div>                  
+
+<div id="navegador">
+<center><a href="index.html"><img class="logo"src="images/logo.png" width="80%" height="176" alt="LOGO VITAL YOGA" /></a></center>
+
+
+<ul class= "menu-principal">
+
+                <li class="menu-item"><a href="yoga.html">¿Sabes qué es el Yoga?</a></li>
+                <li class="menu-item"><a href="para-mi-el-yoga.html">¿Es para mí el Yoga?</a></li>
+                <li class="menu-item"><a href="clases-de-yoga.html">Clases de Yoga</a></li>
+                <li class="menu-item"><a href="taller.html">Taller Introductorio</a></li>
+                <li class="menu-item"><a href="programas-especiales.html">Programas Especiales</a></li>
+                <li class="menu-item"><a href="vital-yoga.html">Acerca de Vital Yoga</style></a></li>
+                <!--<li><a href="http://vital-yoga.blogspot.com/" target="_blank">Blog</a></li>
+                <!--<li><a href="fotos.html">Fotos</a></li>-->
+                <li class="menu-item"><a href="contactenos.php">Contáctenos</a></li>
+  </ul>
+          
+           <div id="cierra_menu">
+          <button onclick="cierra_menu()">Cerrar</button>
+		  </div>	
+</div>
+
+<script>
+
+function abre_menu() {
+		document.getElementById("navegador").style.display = "block";	
+ //Esta es la parte original
+	//alert("Carako");
+	//document.getElementById("navegador").style.left="300px";
+	}
+	
+	
+	//var contadora;
+//	contadora= 0.2;	
+
+	
+    	//document.getElementById("navegador").style.display = "none";
+//		//for (contadora = 0; contadora < 5; contadora++) {
+//    	alert()
+//		document.getElementById("navegador").style.display = "block";	
+////		document.getElementById("navegador").style.display=block;
+////		alert(contadora);
+////
+//////	while (contador<1) {
+////		document.getElementById("navegador").style.opacity = contador;
+////		contador=contador+1; contador++;
+////}
+//		
+
+
+		//
+//		function aumentaOpacidad() {
+//		document.getElementById("navegador").style.opacity = contador;
+//		contador=contador+0.1;
+//		}
+//
+//
+//	setInterval(aumentaOpacidad(),5000)
+
+//
+//		document.getElementById("navegador").style.left="150px";
+////		document.getElementById("navegador").style.transition: left 2s; 
+//		document.getElementById("navegador").style.left="300px";		
+//	alert("Carajo");
+
+ 
+
+function cierra_menu() {
+    //document.getElementById("navegador").style.top= "-30px";
+	//document.getElementById("navegador").style.display = "none";
+	document.location.href = document.location.href;
+}
+
+function ampliar1() {
+    document.getElementById("ampliar1").style.display = "block";
+}
+function ampliar2() {
+    document.getElementById("ampliar2").style.display = "block";
+}
+function cerrar1() {
+    document.getElementById("ampliar1").style.display = "none";
+}
+function cerrar2() {
+    document.getElementById("ampliar2").style.display = "none";
+	$('html,body').animate({
+    scrollTop: $("#ancla").offset().top
+}, 1000);
+}
+
+
+</script>
+
+
+</body>
+</html>

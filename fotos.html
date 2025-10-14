@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="ES">
+<head>
+<title>Galeria Fotos - Vital Yoga</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="style.css" type="text/css" media="all" />	
+<script type="text/javascript" src="js/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="js/jquery.history.js"></script>
+<script type="text/javascript" src="js/jquery.galleriffic.js"></script>
+<script type="text/javascript" src="js/jquery.opacityrollover.js"></script>
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript">
+    document.write('<style type="text/css">.noscript { display: none; }</style>');
+</script>		
+</head>
+
+<body>
+<div id="maincontainer">
+    <div id="navigation">
+        <div id="nav_container">
+            <h1><a href="index.html">Photo Capture - Galleria</a></h1>
+            <ul>
+                <li><a href="yoga.html">¿Sabes qué es el Yoga?</a></li>
+                <li><a href="para-mi-el-yoga.html">¿Es para mí el Yoga?</a></li>
+                <li><a href="clases-de-yoga.html">Clases de Yoga</a></li>
+                <li><a href="taller.html">Taller Introductorio</a></li>
+                <li><a href="programas-especiales.html">Programas Especiales</a></li>
+                <li><a href="vital-yoga.html">Vital Yoga</a></li>
+                <li><a href="http://vital-yoga.blogspot.com/" target="_blank">Blog</a></li>
+                <!--<li><a href="fotos.html">Fotos</a></li>-->
+                <li><a href="contactenos.php">Contáctenos</a></li>
+          </ul>
+          <a href="http://www.facebook.com/pages/Vital-Yoga/224623620903171" target="_blank"><img src="images/facebook.JPG" width="32" height="31" style="margin-left:20px" border="0"/></a>
+        </div>
+    </div>
+	<div id="container">
+	<div id="inside_container">
+		<div id="contentmain">
+			<div id="mainbox">
+            <br/>
+                <div align="right">
+                <object type="application/x-shockwave-flash" data="http://flash-mp3-player.net/medias/player_mp3_mini.swf" width="200" height="20">
+                <param name="movie" value="http://flash-mp3-player.net/medias/player_mp3_mini.swf" />
+                <param name="bgcolor" value="#eeeeee" />
+                <param name="FlashVars" value="mp3=http%3A//gonzalodecossio.com/yoga/audio/music.mp3&amp;autoplay=1&amp;bgcolor=eeeeee&amp;loadingcolor=e76012&amp;buttoncolor=c8c8c8" />
+                <param name="LOOP" value="true" />
+                </object>
+                </div> 
+				<div id="gallery">	
+                		
+					<div class="content">
+						<div id="information"><a href="#" id="slick-slidetoggle">Info</a></div>
+						<div class="slideshow-container">
+							<div id="loading" class="loader"></div>
+							<div id="slideshow" class="slideshow"></div>
+							<div id="caption" class="caption-container"></div>
+						</div>
+					</div>
+					
+					<div class="navigation-container">
+						<div id="thumbs" class="navigation">
+							<a class="pageLink prev" style="visibility: hidden;" href="#" title="Previous Page"></a>
+							<ul class="thumbs noscript">
+								<li>
+									<a class="thumb" href="images/gallery/01.jpg">
+										<img src="images/gallery/01p.jpg"/>
+									</a>
+									<div class="caption">
+										<div class="image-title">Lorem Ipsum is simply dummy</div>
+										<div class="image-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+									</div>
+								</li>
+                                <li>
+									<a class="thumb" href="images/gallery/02.jpg">
+										<img src="images/gallery/02p.jpg" />
+									</a>
+									<div class="caption">
+										<div class="image-title">Lorem Ipsum is simply dummy</div>
+										<div class="image-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+									</div>
+								</li>
+                                <li>
+									<a class="thumb" href="images/gallery/03.jpg">
+										<img src="images/gallery/03p.jpg" />
+									</a>
+									<div class="caption">
+										<div class="image-title">Lorem Ipsum is simply dummy</div>
+										<div class="image-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+									</div>
+								</li>
+                                <li>
+									<a class="thumb" href="images/gallery/04.jpg">
+										<img src="images/gallery/04p.jpg" />
+									</a>
+									<div class="caption">
+										<div class="image-title">Lorem Ipsum is simply dummy</div>
+										<div class="image-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+									</div>
+								</li>
+                                <li>
+									<a class="thumb" href="images/gallery/05.jpg">
+										<img src="images/gallery/05p.jpg" />
+									</a>
+									<div class="caption">
+										<div class="image-title">Lorem Ipsum is simply dummy</div>
+										<div class="image-desc">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+									</div>
+								</li>
+							</ul>
+							<a class="pageLink next" style="visibility: hidden;" href="#" title="Next Page"></a>
+						</div>
+					</div>
+					<div id="controls" class="controls"></div>
+					<h3 class="gallerytitle">&nbsp;</h3>
+					<script type="text/javascript">
+						jQuery(document).ready(function($) {
+							// We only want these styles applied when javascript is enabled
+							$('div.content').css('display', 'block');
+
+							// Initially set opacity on thumbs and add
+							// additional styling for hover effect on thumbs
+							var onMouseOutOpacity = 0.67;
+							$('#thumbs ul.thumbs li, div.navigation a.pageLink').opacityrollover({
+								mouseOutOpacity:   onMouseOutOpacity,
+								mouseOverOpacity:  1.0,
+								fadeSpeed:         'fast',
+								exemptionSelector: '.selected'
+							});
+
+							// Initialize Advanced Galleriffic Gallery
+							var gallery = $('#thumbs').galleriffic({
+								delay:                     3800,
+								numThumbs:                 7,
+								preloadAhead:              10,
+								enableTopPager:            false,
+								enableBottomPager:         false,
+								imageContainerSel:         '#slideshow',
+								controlsContainerSel:      '#controls',
+								captionContainerSel:       '#caption',
+								loadingContainerSel:       '#loading',
+								renderSSControls:          true,
+								renderNavControls:         true,
+								playLinkText:              'Avanzar <div>&rsaquo;</div>',
+								pauseLinkText:             'Pausar <span>||</span>',
+								prevLinkText:              '&lsaquo;',
+								nextLinkText:              '&rsaquo;',
+								nextPageLinkText:          'Next &rsaquo;',
+								prevPageLinkText:          '&lsaquo; Prev',
+								enableHistory:             true,
+								autoStart:                 true,
+								syncTransitions:           true,
+								defaultTransitionDuration: 1000,
+								onSlideChange:             function(prevIndex, nextIndex) {
+									this.find('ul.thumbs').children()
+										.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+										.eq(nextIndex).fadeTo('fast', 1.0);
+
+									this.$captionContainer.find('div.photo-index')
+										.html('Photo '+ (nextIndex+1) +' of '+ this.data.length);
+								},
+								onPageTransitionOut:       function(callback) {
+									this.fadeTo('fast', 0.0, callback);
+								},
+								onPageTransitionIn:        function() {
+									var prevPageLink = this.find('a.prev').css('visibility', 'hidden');
+									var nextPageLink = this.find('a.next').css('visibility', 'hidden');
+
+									if (this.displayedPage > 0)
+										prevPageLink.css('visibility', 'visible');
+
+									var lastPage = this.getNumPages() - 1;
+									if (this.displayedPage < lastPage)
+										nextPageLink.css('visibility', 'visible');
+
+									this.fadeTo('fast', 1.0);
+								}
+							});
+
+
+							gallery.find('a.prev').click(function(e) {
+								gallery.previousPage();
+								e.preventDefault();
+							});
+
+							gallery.find('a.next').click(function(e) {
+								gallery.nextPage();
+								e.preventDefault();
+							});
+							
+							function pageload(hash) {
+								
+								if(hash) {
+									$.galleriffic.gotoImage(hash);
+								} else {
+									gallery.gotoIndex(0);
+								}
+							}
+							
+							$.historyInit(pageload, "advanced.html");
+
+							$("a[rel='history']").live('click', function(e) {
+								if (e.button != 0) return true;
+
+								var hash = this.href;
+								hash = hash.replace(/^.*#/, '');
+								
+								$.historyLoad(hash);
+
+								return false;
+							});
+							
+						});
+					</script>
+				</div>
+			</div>
+			<div id="footer">Vital Yoga al encuentro de la armonía interior - Todos los derechos reservados Copyright © 2011 - <a href="http://gonzalodecossio.com" target="_blank" title="Design & Development">design</a></div>
+		</div>
+	</div>
+	</div>
+	</div> 
+</body>
+</html>
