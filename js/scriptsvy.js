@@ -40,12 +40,6 @@ function CompTW() {
 	window.open(a , "" , "width=600,height=400") 
 }
 
-function CompGoo() {
-	var a="https://plus.google.com/share?url=";
-	a= a + document.location.href; 
-	window.open(a , "" , "width=600,height=400") 
-}
-
 function CompWA() {
 	var a="whatsapp://send?text=";
 	a= a + document.location.href;
@@ -64,3 +58,4 @@ function CompMail() {
 	window.location.href="mailto:?subject="+a+"&body= %0A%0A"+mensaje+":%0A%0AHacer clic en el siguiente enlace para leer el contenido:%0A"+b   
 
 }
+
